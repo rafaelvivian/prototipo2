@@ -18,11 +18,18 @@ options_bar = {
       "endingShape": 'rounded',
       "events": {
         "click": False
-      }
+      },
+      "dataLabels": {
+        "position": "top"
+      }      
     },
   },
   "dataLabels": {
-    "enabled": False
+    "enabled": True,     
+     "style": {
+       "fontSize": '12px',
+       "colors": ['#000000']
+     }
   },
   "stroke": {
     "show": True,
@@ -32,7 +39,7 @@ options_bar = {
   "xaxis": {
     "categories": [''],
   },
-  "yaxis": {
+  "yaxis": {    
     "title": {
       "text": ''
     }
@@ -131,22 +138,28 @@ options_donut = {
 col1, col2 = st.columns([2,1])
 
 with col1:
-  with st.container(border=True):
-    #series = [{
-      #"name": "Porcentagem",
-      #"data": [69.1, 80.5, 72.2, 99.8, 23.6]
-    #}]
+  with st.container(border=True):    
     series = [
-      {"name": "Empatia estudante", "data": [69.1, 0, 0, 0, 0]},
-      {"name": "Empatia turma", "data": [76.8, 0, 0, 0, 0]},
-      {"name": "Resiliência estudante", "data": [0, 80.5, 0, 0, 0]},
-      {"name": "Resiliência turma", "data": [0, 72.9, 0, 0, 0]},
-      {"name": "Abertura ao Novo estudante", "data": [0, 0, 72.2, 0, 0]},
-      {"name": "Abertura ao Novo turma", "data": [0, 0, 81.2, 0, 0]},
-      {"name": "Autogestão estudante", "data": [0, 0, 0, 99.8, 0]},
-      {"name": "Autogestão turma", "data": [0, 0, 0, 43.4, 0]},
-      {"name": "Engajamento estudante", "data": [0, 0, 0, 0, 41.6]},
-      {"name": "Engajamento turma", "data": [0, 0, 0, 0, 28.3]}
+      #{"name": "Empatia estudante", "data": [69.1, None, None, None, None]},
+      #{"name": "Empatia turma", "data": [76.8, None, None, None, None]},     
+      #{"name": "Resiliência estudante", "data": [None, 80.5, None, None, None]},
+      #{"name": "Resiliência turma", "data": [None, 72.9, None, None, None]},
+      #{"name": "Abertura ao Novo estudante", "data": [None, None, 72.2, None, None]},
+      #{"name": "Abertura ao Novo turma", "data": [None, None, 81.2, None, None]},
+      #{"name": "Autogestão estudante", "data": [None, None, None, 99.8, None]},
+      #{"name": "Autogestão turma", "data": [None, None, None, 43.4, None]},
+      #{"name": "Engajamento estudante", "data": [None, None, None, None, 41.6]},
+      #{"name": "Engajamento turma", "data": [None, None, None, None, 28.3]}  
+      {"name": "Empatia estudante", "data": [69.1]},
+      {"name": "Empatia turma", "data": [76.8]},     
+      {"name": "Resiliência estudante", "data": [80.5]},
+      {"name": "Resiliência turma", "data": [72.9]},
+      {"name": "Abertura ao Novo estudante", "data": [72.2]},
+      {"name": "Abertura ao Novo turma", "data": [81.2]},
+      {"name": "Autogestão estudante", "data": [99.8]},
+      {"name": "Autogestão turma", "data": [43.4]},
+      {"name": "Engajamento estudante", "data": [41.6]},
+      {"name": "Engajamento turma", "data": [28.3]} 
     ]     
     type = 'bar'
     width = 600
